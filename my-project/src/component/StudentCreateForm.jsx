@@ -1,31 +1,33 @@
 import React, { useReducer, useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
+import { useAddStudentDataMutation } from "./services/studentApi";
 
 function StudentCreateForm({ showModal, closeModal }) {
+  const [addStudent] = useAddStudentDataMutation();
   //state for error
-  const [error, setError] = useState({
-    id: "",
-    name: "",
-    place: "",
-    phone: "",
-  });
+  // const [error, setError] = useState({
+  //   id: "",
+  //   name: "",
+  //   place: "",
+  //   phone: "",
+  // });
 
-  const validation = (value) => {
-    let errorMsg = {};
-    if (!value.id) {
-      errorMsg.id = "Id is required";
-    }
-    if (!value.name) {
-      errorMsg.name = "Name is required";
-    }
-    if (!value.place) {
-      errorMsg.place = "Place is required";
-    }
-    if (!value.phone) {
-      errorMsg.phone = "Phone is required";
-    }
-    return errorMsg;
-  };
+  // const validation = (value) => {
+  //   let errorMsg = {};
+  //   if (!value.id) {
+  //     errorMsg.id = "Id is required";
+  //   }
+  //   if (!value.name) {
+  //     errorMsg.name = "Name is required";
+  //   }
+  //   if (!value.place) {
+  //     errorMsg.place = "Place is required";
+  //   }
+  //   if (!value.phone) {
+  //     errorMsg.phone = "Phone is required";
+  //   }
+  //   return errorMsg;
+  // };
 
   const formReducer = (state, action) => {
     if (action.type === "HANDLE_FORM") {
@@ -54,13 +56,20 @@ function StudentCreateForm({ showModal, closeModal }) {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(state);
-
-    const errorField = validation(state);
-    console.log(errorField);
-    setError(errorField);
+    try {
+      let payload = await addStudent(state);
+      if (payload) {
+        closeModal();
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    // const errorField = validation(state);
+    // console.log(errorField);
+    // setError(errorField);
   };
 
   return (

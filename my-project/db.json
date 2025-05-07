@@ -23,7 +23,30 @@
       "name": "Amit Jadhav",
       "place": "Mumbai",
       "phone": 9988776655
+    },
+    {
+      "id": "5",
+      "name": "Rahul",
+      "place": "Gujrat",
+      "phone": "54874547"
+    },
+    {
+      "id": "6",
+      "name": "Nishaa",
+      "place": "Pune",
+      "phone": "45654545"
+    },
+    {
+      "id": "7",
+      "name": "Gourav",
+      "place": "Tasgoan",
+      "phone": "6478544577"
     }
   ],
-  "users": [{ "id": 1, "name": "John Doe" }]
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe"
+    }
+  ]
 }
