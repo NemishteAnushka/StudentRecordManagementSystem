@@ -2,11 +2,15 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const studentApi = createApi({
   reducerPath: "studentApi",
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:4001/" }),
-  tagTypes: ["student-list"],
+  tagTypes: ["student-list", "student-by-id"],
   endpoints: (builder) => ({
     getStudentsData: builder.query({
       query: () => "students",
       providesTags: ["student-list"],
+    }),
+    getStudentDataById: builder.query({
+      query: (id) => `students/${id}`,
+      providesTags: ["student-by-id"],
     }),
     addStudentData: builder.mutation({
       query: (newStudent) => ({
@@ -19,5 +23,8 @@ export const studentApi = createApi({
   }),
 });
 
-export const { useGetStudentsDataQuery, useAddStudentDataMutation } =
-  studentApi;
+export const {
+  useGetStudentsDataQuery,
+  useAddStudentDataMutation,
+  useGetStudentDataByIdQuery,
+} = studentApi;

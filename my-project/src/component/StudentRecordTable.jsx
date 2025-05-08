@@ -37,9 +37,7 @@ function StudentRecordTable() {
               </>
             )}
             {StudentInfo?.map((items) => (
-              <tr key={items?.id}>
-                <StudentRecordListItems {...items} />
-              </tr>
+              <StudentRecordListItems {...items} key={items?.id} />
             ))}
           </tbody>
         </Table>
