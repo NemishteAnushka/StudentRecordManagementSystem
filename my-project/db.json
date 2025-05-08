@@ -1,52 +1,16 @@
 {
   "students": [
     {
-      "id": "1",
-      "name": "Anushka Nemishte",
-      "place": "Sangli",
-      "phone": 2021454154
-    },
-    {
       "id": "2",
       "name": "Rohan Deshmukh",
       "place": "Pune",
       "phone": 9876543210
     },
     {
-      "id": "3",
-      "name": "Sneha Patil",
-      "place": "Kolhapur",
-      "phone": 9123456780
-    },
-    {
-      "id": "4",
-      "name": "Amit Jadhav",
-      "place": "Mumbai",
-      "phone": 9988776655
-    },
-    {
-      "id": "5",
-      "name": "Rahul",
-      "place": "Gujrat",
-      "phone": "54874547"
-    },
-    {
       "id": "6",
       "name": "Nishaa",
       "place": "Pune",
       "phone": "45654545"
-    },
-    {
-      "id": "7",
-      "name": "Gourav",
-      "place": "Tasgoan",
-      "phone": "6478544577"
-    },
-    {
-      "id": "8",
-      "name": "dfghjkuytf",
-      "place": "ghjhgfghjhgh",
-      "phone": "854741"
     }
   ],
   "users": [

@@ -20,6 +20,14 @@ export const studentApi = createApi({
       }),
       invalidatesTags: ["student-list"],
     }),
+    deleteStudentData: builder.mutation({
+      query: (id) => ({
+        url: `students/${id}`,
+        method: "DELETE",
+        // body: newStudent,
+      }),
+      invalidatesTags: ["student-list"],
+    }),
   }),
 });
 
@@ -27,4 +35,5 @@ export const {
   useGetStudentsDataQuery,
   useAddStudentDataMutation,
   useGetStudentDataByIdQuery,
+  useDeleteStudentDataMutation,
 } = studentApi;
