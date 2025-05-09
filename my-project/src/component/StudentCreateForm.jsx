@@ -32,8 +32,7 @@ function StudentCreateForm({ showModal, closeModal }) {
   const formReducer = (state, action) => {
     if (action.type === "HANDLE_FORM") {
       return { ...state, [action.name]: action.value };
-    }
-    if (action.type === "RESET") {
+    } else if (action.type === "RESET") {
       return initialState;
     } else {
       return state;

@@ -1,16 +1,16 @@
 {
   "students": [
     {
-      "id": "2",
-      "name": "Rohan Deshmukh",
-      "place": "Pune",
-      "phone": 9876543210
+      "id": "1",
+      "name": "Anushka",
+      "place": "sangli",
+      "phone": "+918010133160"
     },
     {
-      "id": "6",
+      "id": "2",
       "name": "Nishaa",
-      "place": "Pune",
-      "phone": "45654545"
+      "place": "Gujrat",
+      "phone": "646467997"
     }
   ],
   "users": [

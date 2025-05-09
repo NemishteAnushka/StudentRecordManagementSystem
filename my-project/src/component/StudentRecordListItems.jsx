@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import StudentViewForm from "./StudentViewForm";
 import CustomDeleteModal from "./CustomDeleteModal";
+import StudentUpdateForm from "./StudentUpdateForm";
 
 function StudentRecordListItems({ id, name, place, phone }) {
   //view Modal
@@ -37,8 +38,25 @@ function StudentRecordListItems({ id, name, place, phone }) {
     }
   };
 
+  //update custom modal
+  const [updateModal, setUpdateModal] = useState(false);
+  const openUpdateModal = () => setUpdateModal(true);
+  const closeUpdateModal = () => setUpdateModal(false);
+
+  const viewUpdateModal = () => {
+    if (updateModal) {
+      return (
+        <StudentUpdateForm
+          updateModal={updateModal}
+          closeUpdateModal={closeUpdateModal}
+          id={id}
+        />
+      );
+    }
+  };
   return (
     <>
+      {viewUpdateModal()}
       {viewModal()}
       {deleteModal()}
       <tr>
@@ -50,7 +68,7 @@ function StudentRecordListItems({ id, name, place, phone }) {
           <Button variant="info" onClick={handleOpen}>
             View
           </Button>
-          <Button variant="warning" className="ms-3">
+          <Button variant="warning" onClick={openUpdateModal} className="ms-3">
             Edit
           </Button>
           <Button variant="danger" className="ms-3" onClick={handleShowDelete}>
