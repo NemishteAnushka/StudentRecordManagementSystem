@@ -1,12 +1,11 @@
 import React from "react";
-import { Button, Table } from "react-bootstrap";
-import { studentApi, useGetStudentsDataQuery } from "./services/studentApi";
+import { Table } from "react-bootstrap";
 import StudentRecordListItems from "./StudentRecordListItems";
 import CreateButton from "./CreateButton";
+import { studentContext } from "../contexts/StudentProvider";
 
 function StudentRecordTable() {
-  const { data: StudentInfo } = useGetStudentsDataQuery();
-  console.log(StudentInfo);
+  const { StudentInfo } = studentContext();
   return (
     <>
       <div className="d-flex justify-content-center">
